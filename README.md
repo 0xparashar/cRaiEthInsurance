@@ -10,7 +10,7 @@ To build an insurance solution where Safe owners can deposit ETH on [Compound](h
 
 Created a deposit function to receive Eth and mint cEth on compound, and update collateral cover in terms of cEth. In other implementations it makes sense to keep collateral cover in terms of underlying collateral, but here after depositing ETH to compound, it will keep increasing in amount, and it made sense to keep track of it in terms of cEth.
 
-While withdrawing or saving safe, we can calculate underlying Eth for cEth by multiplying current exchange rate of cEth with amount of cEth.
+While withdrawing or saving safe, we can calculate underlying Eth for cEth by multiplying current exchange rate (```exchangeRateCurrent()```) of cEth with amount of cEth.
 
 Created a withdrawal function which redeem cEth tokens in exchange of Eth and transfer it back to caller of the function, hence owner of safe should be careful in giving access to his safe, because it will also give him access to withdraw collateral kept in cRaiEthInsurance
 
